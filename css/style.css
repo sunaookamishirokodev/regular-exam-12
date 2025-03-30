@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+/* css base */
+*, ::after, ::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif !important;
+}
+
+.container {
+  margin: 0 auto
+}
+
+/* fonts */
+.lato {
+    font-family: "Lato", sans-serif !important;
+}
+
+.abril {
+    font-family: "Abril Fatface", sans-serif !important;
+}
+
+/* animation */
+.underline-animation {
+  position: relative;
+  cursor: pointer;
+}
+
+.underline-animation::after {
+  content: "";
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  height: 2.5px;
+  bottom: -5px;
+  left: 0;
+  right: 100%;
+  transition: all 0.3s ease;
+}
+
+.underline-animation:hover::after {
+  right: 0;
+}
+
+/* carousel */
+.carousel-container {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  user-select: none;
+}
+
+/* form */
+.form__contact {
+  max-width: 600px;
+  margin: 0 auto;
+  border-left: 30px solid white;
+  border-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0MS44NnB4IiBoZWlnaHQ9IjUyLjMyNnB4IiB2aWV3Qm94PSIwIDAgNDEuODYgNTIuMzI2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0MS44NiA1Mi4zMjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDB2MjUuMTYzaDcuMDk3YzAuNTAxLTQuOTg5LDQuNzEyLTguODg0LDkuODMzLTguODg0YzUuNDU4LDAsOS44ODQsNC40MjUsOS44ODQsOS44ODRzLTQuNDI1LDkuODg0LTkuODg0LDkuODg0Yy01LjEyMSwwLTkuMzMyLTMuODk1LTkuODMzLTguODg0SDB2MjUuMTYzaDQxLjg2VjBIMHoiLz48L3N2Zz4=)  5% 100% repeat;
+  border-image-width: 0px 0px 0px 30px;
+  transform: translateY(100%);
+  animation: init 1s ease-in-out forwards;
+}
+.form__contact fieldset {
+  position: relative;
+  margin: 0;
+  padding: 30px 30px 40px 80px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  font: 24px 'Shadows Into Light', cursive;
+  background: #fff linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 0) 0 20px / 100% 40px;
+}
+.form__contact fieldset:after {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  content: '';
+  height: 100%;
+  width: 1px;
+  border-left: double #E08183;
+}
+.form__contact p {
+  margin: 0 0 40px 0;
+  line-height: 40px;
+  color: #333;
+}
+.form__contact span {
+  position: relative;
+  line-height: 40px;
+}
+.form__contact button {
+  margin-top: 40px;
+  float: right;
+  border: none;
+  font-family: 'Shadows Into Light', cursive;
+  color: #E08183;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.form__contact button:hover {
+  transform: translateX(10px);
+}
+.form__field {
+  display: inline;
+  color: #7DB665;
+  outline: none;
+  cursor: pointer;
+}
+.form__field:empty {
+  display: inline-block;
+  color: #DDD;
+}
+.form__field:empty:before, .form__field:empty:focus:before {
+  content: attr(data-placeholder);
+}
+svg {
+  display: none;
+}
+@keyframes init {
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes do-blur {
+  0% {
+    filter: url(#blur4);
+  }
+  25% {
+    filter: url(#blur3);
+  }
+  50% {
+    filter: url(#blur2);
+  }
+  75% {
+    filter: url(#blur1);
+  }
+  100% {
+    filter: url(#blur0);
+  }
+}
