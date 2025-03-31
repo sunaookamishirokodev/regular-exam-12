@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/modal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +15,7 @@
 
 <body id="head" class="text-white relative">
   <!-- Modal -->
-  <div id="registerModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+  <div id="messageModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
     <form class="form__contact" action="/">
       <fieldset>
         <p>Chào bạn!</p>
@@ -29,6 +30,50 @@
     </form>
   </div>
 
+  <div id="registerModal" class="fixed inset-0 text-black bg-black/50 hidden items-center justify-center z-50">
+    <div class="container_form">
+      <form>
+        <div class="flex justify-between mb-0.5"><h4>Information</h4><button type="button" onclick="closeRegisterModal()" class="cursor-pointer">X</button></div>
+        <div class="row">
+          <div class="input-group input-group-icon"><input type="text" placeholder="Full Name" />
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+          </div>
+          <div class="input-group input-group-icon"><input type="email" placeholder="Email Adress" />
+            <div class="input-icon"><i class="fa fa-envelope"></i></div>
+          </div>
+          <div class="input-group input-group-icon"><input type="password" placeholder="Password" />
+            <div class="input-icon"><i class="fa fa-key"></i></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-half">
+            <h4 class="mb-0.5">Date of Birth</h4>
+            <div class="input-group">
+              <div class="col-third"><input type="number" min="1" max="31" placeholder="DD" /></div>
+              <div class="col-third"><input type="number" min="1" max="12" placeholder="MM" /></div>
+              <div class="col-third"><input type="number" min="1900" max="2024" placeholder="YYYY" /></div>
+            </div>
+          </div>
+          <div class="col-half">
+            <h4 class="mb-0.5">Gender</h4>
+            <div class="input-group"><input id="gender-male" type="radio" name="gender" value="male" /><label
+                for="gender-male">Male</label><input id="gender-female" type="radio" name="gender" value="female" /><label
+                for="gender-female">Female</label></div>
+          </div>
+        </div>
+        <div class="row">
+          <h4>Terms and Conditions</h4>
+          <div class="input-group"><input id="terms" type="checkbox" /><label for="terms">I accept the terms and
+              conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label></div>
+        </div>
+        <div class="row flex justify-end gap-4">
+          <button type="reset" class="px-4 py-2 cursor-pointer bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors">Reset</button>
+          <button type="submit" class="px-4 py-2 cursor-pointer bg-[#f0a500] text-white rounded hover:bg-[#f0a500]/85 transition-colors">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="absolute top-0 left-0 w-full bg-black z-10">
     <img class="w-screen h-screen" sizes="100vw" src="./assets/thumbnail.png" alt="Thumbnail">
     <!-- Header -->
@@ -37,8 +82,9 @@
         <a href="#head"><img src="assets/logo.png" width="40" height="40" alt="Logo"></a>
         <ul class="flex gap-x-4 items-center">
           <li class="underline-animation"><a href="#about">About</a></li>
-          <li class="underline-animation"><a href="/features">Features</a></li>
+          <li class="underline-animation"><a href="#">Features</a></li>
           <li class="underline-animation"><a href="#contact">Contact Us</a></li>
+          <li class="underline-animation"><button onclick="openRegisterModal()">Sign up</button></li>
         </ul>
       </div>
 
@@ -48,9 +94,9 @@
         <h1 class="abril text-5xl md:text-8xl max-w-3xl mt-8">Nevada Summer Night Party</h1>
         <div class="lato mt-10 text-md md:text-xl flex flex-col"><span>Get ready for one of the most memorable
             festivals.</span><span>Our summer night party will take place 5-9 June 2024.</span></div>
-        <button onclick="openModal()"
+        <button onclick="openMessageModal()"
           class="flex gap-2 items-center px-5 py-3 border-white border-2 mt-10 cursor-pointer group hover:border-cyan-400"><span
-            class="group-hover:text-cyan-400">Register now</span><i
+            class="group-hover:text-cyan-400">Leave a message</span><i
             class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform duration-300 group-hover:text-cyan-400"></i></button>
       </div>
     </div>
