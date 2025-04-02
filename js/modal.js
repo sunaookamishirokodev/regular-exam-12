@@ -14,20 +14,3 @@ document.getElementById('messageModal').addEventListener('click', function (e) {
     closeMessageModal();
   }
 });
-
-function openRegisterModal() {
-  document.getElementById('registerModal').classList.remove('hidden');
-  document.getElementById('registerModal').classList.add('flex');
-}
-
-function closeRegisterModal() {
-  document.getElementById('registerModal').classList.add('hidden');
-  document.getElementById('registerModal').classList.remove('flex');
-}
-
-// Close modal when clicking outside
-document.getElementById('registerModal').addEventListener('click', function (e) {
-  if (e.target === this) {
-    closeRegisterModal();
-  }
-});

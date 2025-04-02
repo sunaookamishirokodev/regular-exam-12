@@ -34,5 +34,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Start auto sliding
-  let slideInterval = setInterval(autoSlide, 7500);
+  let slideInterval = setInterval(autoSlide, 3500);
 });
